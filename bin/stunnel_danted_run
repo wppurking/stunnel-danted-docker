@@ -1,4 +1,6 @@
 #!/bin/bash
 
+/usr/sbin/danted -f /root/danted/danted.conf -D
 /usr/local/bin/stunnel /root/stunnel/stunnel.conf
-/usr/sbin/danted -f /root/danted/danted.conf
+# block this bash
+tail -f /root/stunnel/stunnel.log

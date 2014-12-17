@@ -1,7 +1,8 @@
 FROM ubuntu:trusty
 MAINTAINER Wyatt Pan <wppurking@gmail.com>
 
-RUN apt-get update && apt-get build-essential wget openssl libssl-dev dante-server -y
+RUN apt-get update 
+RUN apt-get build-essential wget openssl libssl-dev dante-server -y
 
 RUN cd /root && wget https://www.stunnel.org/versions.html && export stunnel_version=$(cat versions.html | cat versions.html | grep -o 'Version [0-9]\.[0-9][0-9]' | head -n 1 | grep -o [0-9]\.[0-9][0-9]) \
   && wget https://www.stunnel.org/downloads/stunnel-$stunnel_version.tar.gz && tar xvf stunnel-$stunnel_version.tar.gz \

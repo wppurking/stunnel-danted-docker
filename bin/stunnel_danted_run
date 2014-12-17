@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/local/bin/stunnel /root/stunnel/stunnel.conf
+/usr/sbin/danted -f /root/danted/danted.conf

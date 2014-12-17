@@ -8,7 +8,7 @@ RUN cd /root && wget https://www.stunnel.org/versions.html && export stunnel_ver
   && cd stunnel-$stunnel_version && ./configure --sysconfdir=/etc && make && make install \
   && cd /root && rm -rf /root/versions.html && rm -rf stunnel-*
 
-RUN cd /root/stunnel && openssl req -new -x509 -nodes -days 3650 -out stunnel.pem -keyout stunnel.pem -subj "/C=CN/ST=HuNan/L=Changsha/O=EasyAcc/OU=IT/CN=wyatt/emailAddress=wppurking@gmail.com"
+RUN mkdir -p /root/stunnel && mkdir -p /root/danted && cd /root/stunnel && openssl req -new -x509 -nodes -days 3650 -out stunnel.pem -keyout stunnel.pem -subj "/C=CN/ST=HuNan/L=Changsha/O=EasyAcc/OU=IT/CN=wyatt/emailAddress=wppurking@gmail.com"
 
 ADD ./stunnel /root/stunnel
 ADD ./danted /root/danted
